@@ -1,0 +1,221 @@
+/* Reset and global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ECDCAE; /* Light background */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main content, Footer */
+    min-height: 100vh;
+    line-height: 2.5em;
+}
+
+header {
+    background-color: #2a6d2d; /* Dark green header */
+    color: white;
+    padding: 1em 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    left: 0; /* Start at the left edge */
+    width: 100%; /* Ensure it spans the entire width */
+    z-index: 1000;
+    border: 5px solid white;
+}
+
+header img {
+    width: 150px;
+    height: 120px;
+    object-fit: cover;
+    display: flex;
+    border: 5px solid black;
+    
+
+}
+
+nav {
+    background-color: #ffffff; /* Light background for nav */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between nav items */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: lightsalmon;
+}
+
+h2 {
+    margin-top: 55px;
+    padding-top: 80px;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin-bottom: 40px;
+    text-align: center;
+    border: 5px solid black;
+}
+
+section img {
+    border: 5px solid black;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Adjust as needed */
+    text-align: center;
+    margin-bottom: 20px;
+    border: 5px solid black;
+    
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    
+}
+
+footer {
+    background-color: gray;
+    display: inline-block;
+    text-align: center;
+}
+
+footer h2 {
+    color: gold;
+    margin: auto;
+    line-height: 2.5em;
+}
+
+footer h6 {
+    text-align: left;
+}
+
+footer p {
+    color: white;
+}
+
+footer p:hover {
+    color: lightsalmon;
+    cursor: pointer;
+}
+
+footer p:active {
+    opacity: 0.7;
+}
+
+#mission img {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and larger devices */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 90%;
+    }
+
+    #mission img {
+        width: 75%;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav a {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+    
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    #mission img {
+        width: 100%;
+    }
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 5px;
+        font-size: 0.8em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    footer h2 {
+        font-size: 1em;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+}
