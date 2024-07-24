@@ -14,36 +14,19 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto; /* Header, Main content, Footer */
     min-height: 100vh;
-    line-height: 2.5em;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 header {
     background-color: #2a6d2d; /* Dark green header */
     color: white;
-    padding: 1em 20px;
+    padding: 1em;
     text-align: center;
     position: sticky;
     top: 0;
-    left: 0; /* Start at the left edge */
     width: 100%; /* Ensure it spans the entire width */
     z-index: 1000;
-    border: 5px solid white;
-}
-
-header img {
-    width: 150px;
-    height: 120px;
-    object-fit: cover;
-    display: flex;
-    border: 5px solid black;
-    
-
-}
-
-nav {
-    background-color: #ffffff; /* Light background for nav */
-    padding: 10px;
-    text-align: center;
 }
 
 nav ul {
@@ -51,11 +34,13 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 20px; /* Space between nav items */
+    flex-wrap: wrap;
 }
 
 nav a {
     text-decoration: none;
     color: black;
+    background-color: white;
     padding: 10px 20px;
     border: 1.5px solid black;
     border-radius: 20px;
@@ -66,26 +51,27 @@ nav a:hover {
     background-color: lightsalmon;
 }
 
-h2 {
-    margin-top: 55px;
-    padding-top: 80px;
-    margin-bottom: 20px;
-}
-
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
 section {
     margin-bottom: 40px;
     text-align: center;
     border: 5px solid black;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 section img {
+    width: 100%;
+    height: auto;
     border: 5px solid black;
+    margin-top: 20px;
 }
 
 .services-container {
@@ -99,38 +85,38 @@ section img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px; /* Adjust as needed */
+    width: 300px;
     text-align: center;
     margin-bottom: 20px;
     border: 5px solid black;
-    
+    padding: 10px;
 }
 
 .service-item img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-    
 }
 
 footer {
     background-color: gray;
-    display: inline-block;
     text-align: center;
+    padding: 20px;
 }
 
 footer h2 {
     color: gold;
-    margin: auto;
-    line-height: 2.5em;
+    margin-bottom: 10px;
 }
 
 footer h6 {
-    text-align: left;
+    color: white;
+    margin-top: 10px;
 }
 
 footer p {
     color: white;
+    margin: 5px 0;
 }
 
 footer p:hover {
@@ -142,9 +128,9 @@ footer p:active {
     opacity: 0.7;
 }
 
-#mission img {
-    width: 50%;
-    margin-bottom: 10px;
+/* Offset for fixed header */
+section:target {
+    scroll-margin-top: 80px; /* Adjust based on header height */
 }
 
 /* Media Queries for responsiveness */
@@ -155,7 +141,7 @@ footer p:active {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .services-container {
         flex-direction: column;
         align-items: center;
@@ -163,10 +149,6 @@ footer p:active {
 
     .service-item {
         width: 90%;
-    }
-
-    #mission img {
-        width: 75%;
     }
 }
 
@@ -180,17 +162,13 @@ footer p:active {
         padding: 5px 10px;
         font-size: 0.9em;
     }
-    
+
     .services-container {
         flex-direction: column;
         align-items: center;
     }
 
     .service-item {
-        width: 100%;
-    }
-
-    #mission img {
         width: 100%;
     }
 }
